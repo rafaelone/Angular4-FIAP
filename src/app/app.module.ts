@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PizzariaComponent } from './pizzaria/pizzaria.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { ListaPizzasComponent } from './produtos/lista-pizzas/lista-pizzas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SobreComponent } from './sobre/sobre.component';
     FooterComponent,
     PizzariaComponent,
     ProdutosComponent,
-    SobreComponent
+    SobreComponent,
+    ListaPizzasComponent
   ],
   imports: [
     BrowserModule,
