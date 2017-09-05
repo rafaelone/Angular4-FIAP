@@ -1,3 +1,17 @@
-<p>
-  produtos works!
-</p>
+<!-- INíCIO do CONTEÚDO -->
+<section class="content-header">
+  <h1>
+    Todas as pizzas
+  </h1>
+</section>
+
+
+<section class="content">
+
+  <div class="row">
+  <div *ngFor="let pizza of pizzas" class="col-sm-6 col-xs-12">
+      <app-lista-pizzas [pizza]="pizza"></app-lista-pizzas>  
+    </div>       
+  </div>
+
+</section>
