@@ -1,0 +1,52 @@
+<div *ngIf="!name; else forminfo">
+    <h1>Formulário</h1>
+    <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" class="form-horizontal">
+      <div class="form-group">
+        <label for="name">nome</label>
+        <input type="text" class="form-control" id="name" required
+        name="name" formControlName="name">
+   <span class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{nameAlert}}</span>
+    <span class="sucess" *ngIf="rForm.controls['name'].valid && rForm.controls['name'].touched">Nome: {{nameSucess}}</span>
+   </div>
+
+      <div class="form-group">
+        <label for="name">e-mail</label>
+        <input type="email" class="form-control" id="mail" required name="email" formControlName="email">
+         <span class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{emailAlert}}</span>
+         <span class="sucess" *ngIf="rForm.controls['email'].valid && rForm.controls['email'].touched"> {{emailSucess}}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Telefone</label>
+        <input type="text" class="form-control" id="telefone" name="telefone">
+      </div>
+
+
+      <div class="form-group">
+        <label for="alterEgo">Assunto</label>
+        <select class="form-control" id="assunto">
+            <option>Teste</option>
+            <option>Teste 2 </option>
+            <option>Teste 3 </option>
+            <option>Teste 4</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Mensagem</label>
+        <input type="text" class="form-control" id="mensagem" required name="mensagem" formControlName="mensagem">
+           <span class="alert" *ngIf="!rForm.controls['mensagem'].valid && rForm.controls['mensagem'].touched">{{mensagemAlert}}</span>
+         <span class="sucess" *ngIf="rForm.controls['mensagem'].valid && rForm.controls['mensagem'].touched"> {{mensagemSucess}}</span>
+  
+      </div>
+
+
+    <input type="submit"  class="btn btn-primary" value="Confirmar" [disabled]="!rForm.valid" value="Cadastrar" >
+	  <button type="button" class="btn btn-success">Novo</button>
+
+    </form>
+
+</div>
+<ng-template #forminfo>
+  Usuario {{name}} cadastro com sucesso
+</ng-template>
